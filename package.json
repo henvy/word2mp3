@@ -1,5 +1,9 @@
 {
   "name": "word2mp3",
+  "create": "2017-12-13",
+  "desc":"baidu word2mp3",
+  "author":"zhy",
+  "github":"https://github.com/henvy/word2mp3",
   "version": "0.1.0",
   "private": true,
   "scripts": {
