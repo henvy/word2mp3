@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		<%= title %>
+	</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+	<h1>
+		<%= title %>
+	</h1>
+	<p>Welcome to
+		<%= title %>
+	</p>
+	<input type="text" class="J_txt">
+	<a href="javascript:;" class="J_getMp3">播放语音</a>
+	<audio src="/baidu.mp3" controls="controls"></audio>
+</body>
+<script src="/javascripts/jquery.min.js"></script>
+<script>
+	$(".J_getMp3").click(function(){
+		var txt = $(".J_txt").val();
+		$.ajax({
+			url: '/baidu',
+			type: 'POST',
+			dataType: 'json',
+			data: {txt: txt},
+			success: function(re){
+				console.log(re);
+				if(re.state == 1){
+					$("audio").attr("src","/baidu.mp3");
+				}
+			}
+		})
+	})
+</script>
+
+</html>
